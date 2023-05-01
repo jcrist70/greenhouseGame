@@ -16,8 +16,8 @@
 
 # Setup
 - for reference:
-- using node -v --> v16.14.0
-- using npm -v --> 8.3.1
+- node -v --> v16.14.0
+- npm -v --> 8.3.1
 - git clone https://github.com/jcrist70/greenhouseGame.git
 - cd greenhouseGame
 - npm install
