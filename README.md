@@ -20,5 +20,6 @@
 - npm -v --> 8.3.1
 - git clone https://github.com/jcrist70/greenhouseGame.git
 - cd greenhouseGame
+- cd client
 - npm install
 - npm start
