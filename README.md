@@ -11,5 +11,5 @@
 #### Greenhouse
 - right-hand panel of the UI
 - user monitors placement of plants and season (can overwright)
-- <Greenhouse/> calculates seasonal game scores
-- <Greenhouse/> displays seasonal and accumulating score 
+- Greenhouse Component calculates seasonal game scores
+- Greenhouse Component displays seasonal and accumulating score 
