@@ -1,0 +1,48 @@
+.plant_control_container {
+    display: inline;
+    direction: row;
+    justify-content: center;
+    --main-color: rgb(104, 117, 217);
+    --main-color-hover: rgb(104, 117, 217, 0.2);
+    --track-color: #ddd;
+    margin-bottom: 10px;
+}
+
+.plant_control_grid {
+    display: grid;
+    margin: 0px;
+    padding-top: 10px;
+    grid-template-rows: 3rem;
+    grid-template-columns: 1rem 3.5rem 10rem 1rem;
+    grid-row-gap: 0px;
+    grid-column-gap: 15px;
+}
+
+.plant_control_index {
+    grid-row: 1;
+    grid-column: 2;
+    background-color: #CE8147;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#38302E;
+    font-size:36px;
+    border-radius: 15px;
+    padding-left: 10px;
+}
+.plant_control_button {
+    grid-row: 1;
+    grid-column: 3;
+    background-color: #CE8147;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#38302E;
+    font-size:x-large;
+    border-radius: 15px;
+}
+.plant_control_button[disabled] {
+    color: #bcbab2;
+    background-color: #DCDAD1;
+}
+

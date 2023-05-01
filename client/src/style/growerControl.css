@@ -1,0 +1,120 @@
+.grower_control_container {
+    display: flex;
+    direction: column;
+    justify-content: center;
+    --main-color: rgb(104, 117, 217);
+    --main-color-hover: rgb(104, 117, 217, 0.2);
+    --track-color: #ddd;
+}
+
+.grower_control_grid {
+    display: grid;
+    margin: 0px;
+    padding-top: 10px;
+    grid-template-rows: 5rem 5rem 3rem repeat(3, 2rem) 3.25rem 3.1rem 2rem;
+    grid-template-columns: 1rem repeat(4, minmax(min-content, 5rem)) 1rem;
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+}
+
+.grower_control_label {
+    grid-row: 3;
+    grid-column: 2/6;
+    background-color: #80D39B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#38302E;
+    font-size:x-large;
+}
+.grower_control_image {
+    grid-row: 1/3;
+    grid-column: 2/6;
+    background-color: #80D39B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#38302E;
+    font-size:x-large;
+}
+.grower_control_water {
+    grid-row: 4;
+    grid-column: 2/6;
+    background-color: #80D39B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#38302E;
+    font-size:x-large;
+    padding-bottom: 8px;
+    padding-left: 5px;
+}
+.grower_control_fertilizer {
+    grid-row: 5;
+    grid-column: 2/6;
+    background-color: #80D39B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#38302E;
+    font-size:x-large;
+    padding-bottom: 8px;
+    padding-left: 5px;
+}
+.grower_control_shade {
+    grid-row: 6;
+    grid-column: 2/6;
+    background-color: #80D39B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#38302E;
+    font-size:x-large;
+    padding-bottom: 8px;
+    padding-left: 5px;
+}
+.grower_control_plant {
+    grid-row: 7;
+    grid-column: 2/6;
+    background-color: #80D39B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#38302E;
+    font-size:x-large;
+}
+.grower_control_advance {
+    grid-row: 8;
+    grid-column: 2/6;
+    background-color: #80D39B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#38302E;
+    font-size:x-large;
+    border-radius: 15px;
+}
+
+.customSlider {
+    /* max width of your slider */
+    max-width: 300px;
+    /* Optional: Only If you want to center your slider in the page */
+    margin: auto;
+    color:white;
+    background-color: blueviolet;
+    z-index: 100;
+  }
+  
+.customSlider-track {
+    /* Top value to align your track to the center of your thumb */
+    top: 8px;
+    /* thickness of the track */
+    height: 4px;
+   /* default color of your track */
+    background: var(--track-color);
+  }
+  
+.customSlider-track.customSlider-track-0 {
+    /* color of the track before the thumb */
+    background: var(--main-color);
+  }

@@ -1,0 +1,166 @@
+.greenhouse_container {
+    display: flex;
+    direction: column;
+    justify-content: center;
+}
+
+.greenhouse_grid {
+    display: grid;
+    margin: 0px;
+    padding-top: 10px;
+    grid-template-rows: 4rem .01rem repeat(3, minmax(2rem, 5rem)) 2rem;
+    grid-template-columns: 1rem repeat(3, minmax(min-content, 10rem)) 1rem;
+    grid-row-gap: 18px;
+    grid-column-gap: 5px;
+}
+
+.greenhouse_image {
+    width: 75%; 
+    object-fit: cover;
+}
+
+.greenhouse_row_1 {
+    grid-row: 1;
+    grid-column: 2/5;
+    background-color: #80D39B;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    color:#38302E;
+    font-size:xx-large;
+    border-radius: 15px;
+}
+.greenhouse_row_2 {
+    grid-row: 3;
+    grid-column: 2/5;
+    background-color: #38302E;
+    border-radius: 30px;
+}
+.greenhouse_row_3 {
+    grid-row: 4;
+    grid-column: 2/5;
+    background-color: #38302E;
+    border-radius: 30px;
+}
+.greenhouse_row_4 {
+    grid-row: 5;
+    grid-column: 2/5;
+    background-color: #38302E;
+    border-radius: 30px;
+}
+.greenhouse_row_5 {
+    grid-row: 5;
+    grid-column: 2/6;
+    background-color: #38302E;
+    border-radius: 30px;
+}
+.greenhouse_row_6 {
+    grid-row: 6;
+    grid-column: 2/5;
+    background-color: #80D39B;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #38302E;
+    font-size:x-large;
+}
+
+
+
+.greenhouse_grow_row_1_col_1 {
+    grid-row: 3;
+    grid-column: 2;
+    background-color: rgba(206, 129, 71, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:wheat;
+    font-size:x-large;
+}
+.greenhouse_grow_row_1_col_2 {
+    grid-row: 3;
+    grid-column: 3;
+    background-color: rgba(206, 129, 71, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:wheat;
+    font-size:x-large;
+}
+.greenhouse_grow_row_1_col_3 {
+    grid-row: 3;
+    grid-column: 4;
+    background-color: rgba(206, 129, 71, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:wheat;
+    font-size:x-large;
+}
+
+.greenhouse_grow_row_2_col_1 {
+    grid-row: 4;
+    grid-column: 2;
+    background-color: rgba(206, 129, 71, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:wheat;
+    font-size:x-large;
+}
+.greenhouse_grow_row_2_col_2 {
+    grid-row: 4;
+    grid-column: 3;
+    background-color: rgba(206, 129, 71, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:wheat;
+    font-size:x-large;
+}
+.greenhouse_grow_row_2_col_3 {
+    grid-row: 4;
+    grid-column: 4;
+    background-color: rgba(206, 129, 71, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:wheat;
+    font-size:x-large;
+}
+
+
+.greenhouse_grow_row_3_col_1 {
+    grid-row: 5;
+    grid-column: 2;
+    background-color: rgba(206, 129, 71, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:wheat;
+    font-size:x-large;
+}
+.greenhouse_grow_row_3_col_2 {
+    grid-row: 5;
+    grid-column: 3;
+    background-color: rgba(206, 129, 71, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:wheat;
+    font-size:x-large;
+}
+.greenhouse_grow_row_3_col_3 {
+    grid-row: 5;
+    grid-column: 4;
+    background-color: rgba(206, 129, 71, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:wheat;
+    font-size:x-large;
+}
+
+

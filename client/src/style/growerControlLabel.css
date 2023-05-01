@@ -1,0 +1,51 @@
+.grower_control_label_container {
+    display: inline;
+    direction: row;
+    justify-content: center;
+    --main-color: rgb(104, 117, 217);
+    --main-color-hover: rgb(104, 117, 217, 0.2);
+    --track-color: #ddd;
+    margin-bottom: 10px;
+}
+
+.grower_control_label_grid {
+    display: grid;
+    margin: 0px;
+    padding-top: 10px;
+    grid-template-rows: 3rem;
+    grid-template-columns: 1rem repeat(5, minmax(min-content, 3rem)) 1rem;
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+}
+
+.grower_control_label_left_arrow {
+    grid-row: 1;
+    grid-column: 2;
+    /* background-color: #80d3bd; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#38302E;
+    font-size:36px;
+}
+.grower_control_label_title {
+    grid-row: 1;
+    grid-column: 3/6;
+    /* background-color: #80d3bd; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#38302E;
+    font-size:x-large;
+}
+.grower_control_label_right_arrow  {
+    grid-row: 1;
+    grid-column:6;
+    /* background-color: #80d3bd; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#38302E;
+    font-size:36px;
+    transform:rotate(180deg);
+}
