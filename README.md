@@ -13,3 +13,12 @@
 - user monitors placement of plants and season (can overwright)
 - Greenhouse Component calculates seasonal game scores
 - Greenhouse Component displays seasonal and accumulating score 
+
+# Setup
+- for reference:
+- using node -v --> v16.14.0
+- using npm -v --> 8.3.1
+- git clone https://github.com/jcrist70/greenhouseGame.git
+- cd greenhouseGame
+- npm install
+- npm start
