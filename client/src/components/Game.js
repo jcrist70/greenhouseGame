@@ -37,7 +37,6 @@ const Game = ({ season }) => {
     // Manage animation frame start/stop for consecutive rounds
     useEffect(() => {
         if (!growing) {
-            console.log('CANCELING')
             cancelAnimationFrame(requestRef.current);
             growingState.current = false;
         }

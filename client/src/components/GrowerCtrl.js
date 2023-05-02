@@ -8,7 +8,7 @@ import "../style/bootstrap_white.css";
 import '../style/growerControl.css';
 import GrowerCtrlLabel from './GrowerCtrlLabel';
 import PlantCtrl from './PlantCtrl';
-import { plant } from '../redux/greenhouseSlice';
+import { plant, toggleHistory } from '../redux/greenhouseSlice';
 
 const INIT_GROW_CONDITIONS = {
     water: 10,
@@ -62,10 +62,16 @@ const GrowerCtrl = ({ plantArr, handleIncSeason }) => {
         };
         store.dispatch(plant({index, plant: newPlant}));
     }
+
+    const handleToggleShowHistory = () => {
+      store.dispatch(toggleHistory());
+    }
+
     // TBD: Break <Slider/> components out into seperate file
     return (
         <div className='grower_control_container'>
             <div className='grower_control_grid'>
+            <button onClick={handleToggleShowHistory}>HISTORY</button>
                 <div className='grower_control_image'><img src={getImage()} style={{ width: '85%', objectFit: 'cover' }} alt='tomatoes'/></div>
                 <div className='grower_control_label'><GrowerCtrlLabel label={plantArr[selectedIndex].name} nextImage={nextImage} prevImage={prevImage}/></div>
                 <div className='grower_control_water'>

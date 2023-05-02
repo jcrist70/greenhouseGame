@@ -3,7 +3,15 @@ import { useSelector } from 'react-redux';
 import Slider from 'rc-slider';
 // PROJECT IMPORTS
 import { store } from '../redux/store';
-import { setGreenhouseFull, resetGreenhouse, setYieldSpring, setYieldSummer, setYieldFall, resetYield, resetPlanted } from '../redux/greenhouseSlice';
+import { setGreenhouseFull, 
+    resetGreenhouse, 
+    setYieldSpring, 
+    setYieldSummer, 
+    setYieldFall, 
+    resetYield, 
+    resetPlanted,
+    addScoreToPlayerHistory,
+ } from '../redux/greenhouseSlice';
 import Game from './Game';
 import '../style/greenhouse9.css';
 
@@ -14,6 +22,7 @@ const Greenhouse = ({ season, plantSourceObj }) => {
     const maxGameCount = useSelector(state => state.greenhouse.maxGameCount);
     const growing = useSelector(state => state.greenhouse.growing);
     const overallYield = useSelector(state => state.greenhouse.yield);
+    const showHistory = useSelector(state => state.greenhouse.showHistory);
     // LOCAL STATE
     const [ cropYield, setCropYield ] = useState(0);
     // REFS
@@ -30,6 +39,10 @@ const Greenhouse = ({ season, plantSourceObj }) => {
             store.dispatch(resetYield());
             prevSeason.current = 'SPRING';
             prevPrevSeason.current = 'SPRING';
+            // console.log('prevSeason.current === HARVEST')
+        }
+        if (prevSeason.current === 'FALL') {
+            store.dispatch(addScoreToPlayerHistory(overallYield.SPRING+overallYield.SUMMER+overallYield.FALL+cropYield));
         }
     }, [season])
     // CALC Yield for each individual plant in the greenhouse taking
@@ -48,25 +61,25 @@ const Greenhouse = ({ season, plantSourceObj }) => {
             if (prevSeason.current === 'SPRING') {
                 scaler = .1;
                 populatedElements.forEach((plant) => {
-                    // const sourcePlant = plantSourceObj()[plant.name];
-                    // let conditionsContribution = (Math.abs(sourcePlant.water-plant.water) + Math.abs(sourcePlant.fertilizer-plant.fertilizer) + Math.abs(sourcePlant.shade-plant.shade))/100;
-                    // scaler = .10 - .10 * conditionsContribution;
+                    const sourcePlant = plantSourceObj()[plant.name];
+                    let conditionsContribution = (Math.abs(sourcePlant.water-plant.water) + Math.abs(sourcePlant.fertilizer-plant.fertilizer) + Math.abs(sourcePlant.shade-plant.shade))/100;
+                    scaler = .10 - .10 * conditionsContribution;
                     curYield = Math.round(curYield + Math.random() * maxGameCount * scaler);
                 })
             } else if (prevSeason.current === 'SUMMER') {
                 scaler = .6;
                 populatedElements.forEach((plant) => {
-                    // const sourcePlant = plantSourceObj()[plant.name];
-                    // let conditionsContribution = (Math.abs(sourcePlant.water-plant.water) + Math.abs(sourcePlant.fertilizer-plant.fertilizer) + Math.abs(sourcePlant.shade-plant.shade))/100;
-                    // scaler = .60 - .60 * conditionsContribution; 
+                    const sourcePlant = plantSourceObj()[plant.name];
+                    let conditionsContribution = (Math.abs(sourcePlant.water-plant.water) + Math.abs(sourcePlant.fertilizer-plant.fertilizer) + Math.abs(sourcePlant.shade-plant.shade))/100;
+                    scaler = .60 - .60 * conditionsContribution; 
                     curYield = Math.round(curYield + Math.random() * maxGameCount * scaler);
                 })
             } else if (prevSeason.current === 'FALL') {
                 scaler = 1;
                 populatedElements.forEach((plant) => {
-                    // const sourcePlant = plantSourceObj()[plant.name];
-                    // let conditionsContribution = (Math.abs(sourcePlant.water-plant.water) + Math.abs(sourcePlant.fertilizer-plant.fertilizer) + Math.abs(sourcePlant.shade-plant.shade))/100;
-                    // scaler = 1 - 1 * conditionsContribution;
+                    const sourcePlant = plantSourceObj()[plant.name];
+                    let conditionsContribution = (Math.abs(sourcePlant.water-plant.water) + Math.abs(sourcePlant.fertilizer-plant.fertilizer) + Math.abs(sourcePlant.shade-plant.shade))/100;
+                    scaler = 1 - 1 * conditionsContribution;
                     curYield = Math.round(curYield + Math.random() * maxGameCount * scaler);
                 })
             }
@@ -94,6 +107,7 @@ const Greenhouse = ({ season, plantSourceObj }) => {
     return (
         <div className='greenhouse_container'>
             <div className='greenhouse_grid'>
+            {showHistory ? 'HISTORY' : null}
                 <div className='greenhouse_row_1'><span>
                     <Slider
                         value={gameCount*(100/maxGameCount)}

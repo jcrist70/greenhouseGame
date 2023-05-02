@@ -15,6 +15,12 @@ const initialState = {
     FALL: 0,
   },
   sourceArrayLength: 9,
+  playerHistory: [
+    100,
+    200,
+    300,
+  ],
+  showHistory: false,
 };
 
 
@@ -66,6 +72,12 @@ export const greenhouseSlice = createSlice({
     },
     resetPlanted: (state, action) => {
       state.planted = 0;
+    },
+    addScoreToPlayerHistory: (state, action) => {
+      state.playerHistory.push(action.payload);
+    },
+    toggleHistory: (state, action) => {
+      state.showHistory = !state.showHistory;
     }
 
     // removeDisconnectedUser: (state, action) => {
@@ -75,6 +87,20 @@ export const greenhouseSlice = createSlice({
 
 });
 
-export const { plant, setGreenhouseFull, resetGreenhouse, startGrowing, stopGrowing, setSeason, setGameCount, incGameCount, setYieldSpring, setYieldSummer, setYieldFall, resetYield, resetPlanted } = greenhouseSlice.actions;
+export const { plant, 
+  setGreenhouseFull, 
+  resetGreenhouse, 
+  startGrowing, 
+  stopGrowing, 
+  setSeason, 
+  setGameCount, 
+  incGameCount, 
+  setYieldSpring, 
+  setYieldSummer, 
+  setYieldFall, 
+  resetYield, 
+  resetPlanted, 
+  addScoreToPlayerHistory,
+  toggleHistory } = greenhouseSlice.actions;
 
 export default greenhouseSlice.reducer;
